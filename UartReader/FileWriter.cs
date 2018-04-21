@@ -16,6 +16,10 @@ namespace UartReader
         {
             streamWriter.WriteLine(line);
         }
+        public void Write(string text)
+        {
+            streamWriter.Write(text);
+        }
 
         public void Dispose()
         {

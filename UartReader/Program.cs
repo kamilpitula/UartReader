@@ -24,7 +24,7 @@ namespace UartReader
             var fullPath = Path.Combine(path, $"result_{DateTime.Now.ToString("ddMMyyyy_hhmmss")}.txt");
 
             var streamWriter =
-                new StreamWriter(fullPath,false);
+                new StreamWriter(fullPath,false,Encoding.Default);
             var fileWriter = new FileWriter(streamWriter);
             var serialPort = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
             

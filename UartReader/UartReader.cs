@@ -18,7 +18,6 @@ namespace UartReader
 
         public void ReadSerial()
         {
-            fileWriter.WriteLine("Starting");
             serialPort.Encoding = Encoding.GetEncoding(28591);
             serialPort.DataReceived += serialPort_DataRecieved;
             serialPort.Open();
@@ -30,7 +29,7 @@ namespace UartReader
             var buffer = serialPort.ReadExisting();
             foreach (char c in buffer)
             {
-                fileWriter.WriteLine(c.ToString());
+                fileWriter.Write(c.ToString().Trim());
                 BytesCounter++;
 
             }
